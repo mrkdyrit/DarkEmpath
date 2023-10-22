@@ -1,5 +1,6 @@
 import 'package:darkempath/screens/characters/character_info.dart';
 import 'package:flutter/material.dart';
+import 'package:darkempath/screens/onboarding/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const CharacterInformation(),
+      home:  OnboardingScreen(),
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),

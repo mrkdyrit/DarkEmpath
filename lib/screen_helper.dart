@@ -1,5 +1,6 @@
 import 'package:darkempath/screens/inbox/inbox.dart';
 import 'package:flutter/material.dart';
+import 'package:darkempath/screens/onboarding/onboarding_screen.dart';
 
 class ScreenHelper extends StatefulWidget {
   const ScreenHelper({super.key});
@@ -18,11 +19,11 @@ class _ScreenHelperState extends State<ScreenHelper> {
         'name': 'Inbox',
         'details': {
           'icon': Icons.message,
-          'screen': const InboxScreen(),
+          'screen':  OnboardingScreen(),
         },
       },
     ];
 
-    return const InboxScreen();
+    return  OnboardingScreen();
   }
 }
