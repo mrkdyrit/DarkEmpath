@@ -110,15 +110,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            chatData.add({
-                              'sender': 'player',
-                              'message': 'NIGGER!'
-                            });
-
-                            chatData.add({
-                              'sender': 'npc',
-                              'message': 'I see that you are racist!'
-                            });
+                            
                           });
                         },
                         child: Padding(
@@ -134,7 +126,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
                               ),
                               child: const Padding(
                                 padding: EdgeInsets.all(16),
-                                child: Text('NIGGER'),
+                                child: Text(''),
                               ),
                             ),
                           ),
