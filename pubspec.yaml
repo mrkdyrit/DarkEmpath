@@ -12,7 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
   dots_indicator: 3.0.0
-  
     
 
   smooth_corner: ^1.1.0
