@@ -147,7 +147,7 @@ class _CharacterInformationState extends State<CharacterInformation>
                               onPressed: () {
                                 Navigator.pushReplacement(
                                   context,
-                                  MaterialPageRoute(builder: (context) => OnboardingScreen())
+                                  MaterialPageRoute(builder: (context) => const OnboardingScreen())
                                 );
                               },
                               style: ElevatedButton.styleFrom(

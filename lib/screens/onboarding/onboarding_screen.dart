@@ -1,9 +1,7 @@
-import 'package:darkempath/screens/characters/character_selection.dart';
+import 'package:darkempath/screens/conversation/conversation.dart';
 import 'package:darkempath/screens/inbox/inbox.dart';
-import 'package:darkempath/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:smooth_corner/smooth_corner.dart';
 
 final List<OnboardingPage> onboardingPages = [
   OnboardingPage(
@@ -32,12 +30,14 @@ class OnboardingPage {
 }
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentIndex = 0;
 
   @override
@@ -71,7 +71,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 if (_currentIndex == (onboardingPages.length - 1)) ...[
                   TextButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const InboxScreen()), (route) => false);
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const ConversationScreen()), (route) => false);
                     }, 
                     child: const Text('Tap here to start game')
                   )
