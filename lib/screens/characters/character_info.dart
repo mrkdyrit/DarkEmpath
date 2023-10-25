@@ -1,3 +1,4 @@
+import 'package:darkempath/screens/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class CharacterInformation extends StatefulWidget {
@@ -52,7 +53,7 @@ class _CharacterInformationState extends State<CharacterInformation>
   void _onButtonPressed() {
     // Change the button color to 0xFF492A60 on press
     setState(() {
-      _buttonColor = Color(0xFF492A60);
+      _buttonColor = const Color(0xFF492A60);
     });
 
     // Play the button press animation
@@ -80,7 +81,7 @@ class _CharacterInformationState extends State<CharacterInformation>
           children: <Widget>[
             FadeTransition(
               opacity: _fadeAnimation,
-              child: Container(
+              child: SizedBox(
                 width: screenWidth,
                 height: screenHeight,
                 child: Image.asset('assets/object_img.png'),
@@ -93,7 +94,7 @@ class _CharacterInformationState extends State<CharacterInformation>
                 child: Container(
                   width: screenWidth,
                   height: 350,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF492A60),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.0),
@@ -103,12 +104,12 @@ class _CharacterInformationState extends State<CharacterInformation>
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Character Name',
                         style: TextStyle(color: Colors.white, fontSize: 25),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(25.0),
+                      const Padding(
+                        padding: EdgeInsets.all(25.0),
                         child: Align(
                           alignment: Alignment.center,
                           child: Text(
@@ -118,12 +119,12 @@ class _CharacterInformationState extends State<CharacterInformation>
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       GestureDetector(
                         onTapDown: (_) {
                           // Change the button color on tap down
                           setState(() {
-                            _buttonColor = Color(0xFF492A60);
+                            _buttonColor = const Color(0xFF492A60);
                           });
                         },
                         onTapUp: (_) {
@@ -143,13 +144,18 @@ class _CharacterInformationState extends State<CharacterInformation>
                               borderRadius: BorderRadius.circular(25.0),
                             ),
                             child: ElevatedButton(
-                              onPressed: _onButtonPressed,
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => OnboardingScreen())
+                                );
+                              },
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.transparent,
                                 shadowColor: Colors.transparent,
                                 elevation: 0,
                               ),
-                              child: Text(
+                              child: const Text(
                                 'Start your job',
                                 style: TextStyle(color: Color(0xFF492A60)),
                               ),
