@@ -1,10 +1,9 @@
+import 'package:darkempath/screens/characters/character_selection.dart';
+import 'package:darkempath/screens/inbox/inbox.dart';
+import 'package:darkempath/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-
-
-void main() {
-  runApp(OnboardingScreen());
-}
+import 'package:smooth_corner/smooth_corner.dart';
 
 final List<OnboardingPage> onboardingPages = [
   OnboardingPage(
@@ -54,41 +53,54 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-  body: Column(
-    children: [
-      Expanded(
-        child: PageView.builder(
-          controller: _pageController,
-          itemCount: onboardingPages.length,
-          itemBuilder: (context, index) {
-            return OnboardingPageWidget(onboardingPages[index]);
-          },
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(bottom: 100.0), // Adjust the padding
-        child: DotsIndicator(
-          dotsCount: onboardingPages.length,
-          position: _currentIndex.toInt(),
-          decorator: DotsDecorator(
-            color: Color(0xFFD9D9D9), // Background color
-            activeColor: Color(0xFF848484), // Active color
-            size: const Size(50.0, 13.0), // Width and height
-            activeSize: const Size(50.0, 13.0), // Width and height for active dot
-            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36.0)),
+      body: Column(
+        children: [
+          Expanded(
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: onboardingPages.length,
+              itemBuilder: (context, index) {
+                return OnboardingPageWidget(onboardingPages[index]);
+              },
+            ),
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 100.0),
+            child: Column(
+              children: [
+                if (_currentIndex == (onboardingPages.length - 1)) ...[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const InboxScreen()), (route) => false);
+                    }, 
+                    child: const Text('Tap here to start game')
+                  )
+                ] else ...[
+                  DotsIndicator(
+                    dotsCount: onboardingPages.length,
+                    position: _currentIndex.toInt(),
+                    decorator: DotsDecorator(
+                      color: const Color(0xFFD9D9D9), // Background color
+                      activeColor: const Color(0xFF848484), // Active color
+                      size: const Size(50.0, 13.0), // Width and height
+                      activeSize: const Size(50.0, 13.0), // Width and height for active dot
+                      activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36.0)),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ],
       ),
-    ],
-  ),
-);
+    );
   }
 }
 
 class OnboardingPageWidget extends StatelessWidget {
   final OnboardingPage page;
 
-  OnboardingPageWidget(this.page);
+  const OnboardingPageWidget(this.page, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -99,16 +111,16 @@ class OnboardingPageWidget extends StatelessWidget {
           page.imageUrl,
           width: 300,
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Text(
           page.title,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           page.description,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 16),
+          style: const TextStyle(fontSize: 16),
         ),
       ],
     );
