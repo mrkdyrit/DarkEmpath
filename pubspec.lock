@@ -120,6 +120,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_corner:
+    dependency: "direct main"
+    description:
+      name: smooth_corner
+      sha256: "1e920cffd9644d6f51f9a99674652f8c00f2e9074b275f3edde0de1441ba78e9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   source_span:
     dependency: transitive
     description:
@@ -186,3 +194,4 @@ packages:
     version: "0.1.4-beta"
 sdks:
   dart: ">=3.1.2 <4.0.0"
+  flutter: ">=1.17.0"
