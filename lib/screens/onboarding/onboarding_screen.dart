@@ -1,4 +1,5 @@
 import 'package:darkempath/screens/characters/character_selection.dart';
+import 'package:darkempath/screens/conversation/conversation.dart';
 import 'package:darkempath/screens/inbox/inbox.dart';
 import 'package:darkempath/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +72,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 if (_currentIndex == (onboardingPages.length - 1)) ...[
                   TextButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const InboxScreen()), (route) => false);
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => darkEmpath_inbox()), (route) => false);
                     }, 
                     child: const Text('Tap here to start game')
                   )
