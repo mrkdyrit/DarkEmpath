@@ -1,7 +1,8 @@
 import 'package:darkempath/screens/conversation/conversation.dart';
 import 'package:darkempath/widgets/typography/heading_medium.dart';
 import 'package:darkempath/widgets/typography/large_text.dart';
-import 'package:darkempath/widgets/typography/normal_text.dart';import 'package:flutter/material.dart';
+import 'package:darkempath/widgets/typography/normal_text.dart';
+import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
 final List<OnboardingPage> onboardingPages = [
