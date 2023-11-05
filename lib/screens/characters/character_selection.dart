@@ -1,6 +1,7 @@
 import 'package:darkempath/screens/characters/character_info.dart';
 import 'package:darkempath/utils/custom_colors.dart';
 import 'package:darkempath/widgets/characters/character_buttons.dart';
+import 'package:darkempath/widgets/typography/heading_1.dart';
 import 'package:flutter/material.dart';
 
 class CharacterSelectionScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class _CharacterSelectionScreenState extends State<CharacterSelectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: DarkEmpathColors.prologueScreensBackground,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -29,31 +31,73 @@ class _CharacterSelectionScreenState extends State<CharacterSelectionScreen> {
         child: ListView(
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Choose',
-              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                fontWeight: FontWeight.bold
-              ),
-            ),
+            const HeadingLarge(titleText: 'Choose'),
             Container(
               margin: const EdgeInsets.only(bottom: 32),
-              child: Text(
-                'Character',
-                style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                  fontWeight: FontWeight.bold
-                ),
-              ),
+              child: const HeadingLarge(titleText: 'Character'),
             ),
             Center(
               child: Wrap(
-                runSpacing: 8.0,
-                spacing: 8.0,
+                runSpacing: 16.0,
+                spacing: 16.0,
                 alignment: WrapAlignment.start,
                 children: [
-                  characterButton(context: context, charInfo: const CharacterInformation()),
-                  characterButton(context: context, charInfo: const CharacterInformation()),
-                  characterButton(context: context, charInfo: const CharacterInformation()),
-                  characterButton(context: context, charInfo: const CharacterInformation()),
+                  CharacterButton(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CharacterInformation(
+                          characterName: 'Juan Dela Cruz',
+                          characterDescription: 'Lorem ipsum dolor sit amet, sarantosi consectetur adipiscing elit Curabisati condimentum magna a leomalesuada, eu vehicula arcu dapibus.',
+                          characterAssetPath: 'assets/images/character_buttons/male.png',
+                        ))
+                      );
+                    },
+                    characterGenderText: 'Male',
+                    characterAssetPath: 'assets/images/character_buttons/male.png',
+                  ),
+                  CharacterButton(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CharacterInformation(
+                          characterName: 'Ollie Montefalcon',
+                          characterDescription: 'Lorem ipsum dolor sit amet, sarantosi consectetur adipiscing elit Curabisati condimentum magna a leomalesuada, eu vehicula arcu dapibus.',
+                          characterAssetPath: 'assets/images/character_buttons/female.png',
+                        ))
+                      );
+                    },
+                    characterGenderText: 'Female',
+                    characterAssetPath: 'assets/images/character_buttons/female.png',
+                  ),
+                  CharacterButton(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CharacterInformation(
+                          characterName: 'Franchesca Dizon',
+                          characterDescription: 'Lorem ipsum dolor sit amet, sarantosi consectetur adipiscing elit Curabisati condimentum magna a leomalesuada, eu vehicula arcu dapibus.',
+                          characterAssetPath: 'assets/images/character_buttons/lesbian.png',
+                        ))
+                      );
+                    },
+                    characterGenderText: 'Lesbian',
+                    characterAssetPath: 'assets/images/character_buttons/lesbian.png',
+                  ),
+                  CharacterButton(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CharacterInformation(
+                          characterName: 'Matthew De Castro',
+                          characterDescription: 'Lorem ipsum dolor sit amet, sarantosi consectetur adipiscing elit Curabisati condimentum magna a leomalesuada, eu vehicula arcu dapibus.',
+                          characterAssetPath: 'assets/images/character_buttons/male.png',
+                        ))
+                      );
+                    },
+                    characterGenderText: 'Gay',
+                    characterAssetPath: 'assets/images/character_buttons/male.png',
+                  ),
                 ],
               ),
             )

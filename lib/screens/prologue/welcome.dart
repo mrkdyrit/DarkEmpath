@@ -1,7 +1,8 @@
 import 'package:darkempath/screens/characters/character_selection.dart';
 import 'package:darkempath/utils/custom_colors.dart';
+import 'package:darkempath/widgets/buttons/default_button.dart';
+import 'package:darkempath/widgets/typography/heading_1.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_corner/smooth_corner.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -21,6 +22,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: DarkEmpathColors.prologueScreensBackground,
       body: Container(
         margin: const EdgeInsets.all(16),
         child: LayoutBuilder(
@@ -32,78 +34,47 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  margin: const EdgeInsets.only(bottom: 16),
-                  child: Center(
-                    child: Text(
-                      'DARK EMPATH',
-                      style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  child: const Center(
+                    child: HeadingLarge(titleText: 'Dark Empath')
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(bottom: buttonsMarginBottom),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const CharacterSelectionScreen())
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: DarkEmpathColors.buttonColor,
-                      minimumSize: const Size.fromHeight(50),
-                      shape: SmoothRectangleBorder(
-                        smoothness: 0.6,
-                        borderRadius: BorderRadius.circular(40),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(bottom: buttonsMarginBottom),
+                        child: DefaultButton(
+                          buttonText: 'New Game', 
+                          buttonAction: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const CharacterSelectionScreen())
+                            );
+                          }
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      'New Game',
-                      style: Theme.of(context).textTheme.labelLarge,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: buttonsMarginBottom),
-                  child: ElevatedButton(
-                    onPressed: () {
+                      Container(
+                        margin: EdgeInsets.only(bottom: buttonsMarginBottom),
+                        child: DefaultButton(
+                          buttonAction: () {
 
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: DarkEmpathColors.buttonColor,
-                      minimumSize: const Size.fromHeight(50),
-                      shape: SmoothRectangleBorder(
-                        smoothness: 0.6,
-                        borderRadius: BorderRadius.circular(40),
+                          },
+                          buttonText: 'Continue',
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      'Continue',
-                      style: Theme.of(context).textTheme.labelLarge,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: buttonsMarginBottom),
-                  child: ElevatedButton(
-                    onPressed: () {
+                      Container(
+                        margin: EdgeInsets.only(bottom: buttonsMarginBottom),
+                        child: DefaultButton(
+                          buttonAction: () {
 
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: DarkEmpathColors.buttonColor,
-                      minimumSize: const Size.fromHeight(50),
-                      shape: SmoothRectangleBorder(
-                        smoothness: 0.6,
-                        borderRadius: BorderRadius.circular(40),
+                          },
+                          buttonText: 'Settings',
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      'Settings',
-                      style: Theme.of(context).textTheme.labelLarge,
-                    ),
+                    ],
                   ),
                 ),
               ],

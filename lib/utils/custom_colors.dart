@@ -11,5 +11,12 @@ class DarkEmpathColors
   static const Color darGreyColor = Color.fromRGBO(131, 129, 129, 1);
 
   // Widget Colors
-  static const Color buttonColor = Color.fromRGBO(214, 214, 214, 1);
+
+  // Buttons
+  static const Color buttonColor = Color(0xFFD9D9D9);
+  static const Color buttonShadeColor = Color(0xFFA3A3A3);
+  static const Color buttonTextColor = Color(0xFF1B1F22);
+
+  // Prologue Screens
+  static const Color prologueScreensBackground = Color(0xFF492A60);
 }
