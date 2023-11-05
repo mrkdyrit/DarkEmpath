@@ -11,18 +11,6 @@ class ScreenHelper extends StatefulWidget {
 class _ScreenHelperState extends State<ScreenHelper> {
   @override
   Widget build(BuildContext context) {
-
-    // List of screens
-    final List<Map<String, dynamic>> ScreenList = [
-      {
-        'name': 'Inbox',
-        'details': {
-          'icon': Icons.message,
-          'screen':  OnboardingScreen(),
-        },
-      },
-    ];
-
-    return  OnboardingScreen();
+    return Scaffold();
   }
 }

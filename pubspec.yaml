@@ -8,11 +8,11 @@ environment:
   
 
 dependencies:
-
   flutter:
     sdk: flutter
   dots_indicator: 3.0.0
   smooth_corner: ^1.1.0
+  blur: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +23,39 @@ flutter:
   uses-material-design: true
   assets:
   - assets/
+  - assets/images/ 
+  - assets/images/character_buttons/
+
+  fonts:
+    - family: Fredoka
+      fonts:
+      - asset: assets/fonts/fredoka/Fredoka-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/fredoka/Fredoka-SemiBold.ttf
+        weight: 600
+      - asset: assets/fonts/fredoka/Fredoka-Medium.ttf
+        weight: 500
+      - asset: assets/fonts/fredoka/Fredoka-Regular.ttf
+        weight: 400
+      - asset: assets/fonts/fredoka/Fredoka-Light.ttf
+        weight: 300
+    - family: Heebo
+      fonts:
+      - asset: assets/fonts/heebo/Heebo-Black.ttf
+        weight: 900
+      - asset: assets/fonts/heebo/Heebo-ExtraBold.ttf
+        weight: 800
+      - asset: assets/fonts/heebo/Heebo-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/heebo/Heebo-SemiBold.ttf
+        weight: 600
+      - asset: assets/fonts/heebo/Heebo-Medium.ttf
+        weight: 500
+      - asset: assets/fonts/heebo/Heebo-Regular.ttf
+        weight: 400
+      - asset: assets/fonts/heebo/Heebo-Light.ttf
+        weight: 300
+      - asset: assets/fonts/heebo/Heebo-ExtraLight.ttf
+        weight: 200
+      - asset: assets/fonts/heebo/Heebo-Light.ttf
+        weight: 100
