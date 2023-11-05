@@ -1,7 +1,6 @@
-import 'package:darkempath/screens/conversation/conversation.dart';
+import 'package:darkempath/screens/drawer/drawer_screen.dart';
 import 'package:darkempath/widgets/typography/heading_medium.dart';
 import 'package:darkempath/widgets/typography/large_text.dart';
-import 'package:darkempath/widgets/typography/normal_text.dart';
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
@@ -135,7 +134,7 @@ class OnboardingPageWidget extends StatelessWidget {
         TextButton(
           onPressed: () {
             if (page.title == 'Enjoy The Game') {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const ConversationScreen()), (route) => false);
+              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const DrawerScreen()), (route) => false);
             }
           }, 
           child: LargeText(text: page.title == 'Enjoy The Game' ? 'Tap here to start game' : '', textColor: const Color(0xFF6F6F6F),)

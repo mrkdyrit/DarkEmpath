@@ -25,7 +25,7 @@ class _CharacterInformationState extends State<CharacterInformation> with Single
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
-  Color _buttonColor = Colors.white; // Initial button color
+  // Color _buttonColor = Colors.white; // Initial button color
 
   @override
   void initState() {
@@ -62,22 +62,22 @@ class _CharacterInformationState extends State<CharacterInformation> with Single
     super.dispose();
   }
 
-  void _onButtonPressed() {
-    // Change the button color to 0xFF492A60 on press
-    setState(() {
-      _buttonColor = const Color(0xFF492A60);
-    });
+  // void _onButtonPressed() {
+  //   // Change the button color to 0xFF492A60 on press
+  //   setState(() {
+  //     _buttonColor = const Color(0xFF492A60);
+  //   });
 
-    // Play the button press animation
-    _animationController
-      ..reset()
-      ..forward().whenComplete(() {
-        // Reset the button color to the original color
-        setState(() {
-          _buttonColor = Colors.white;
-        });
-      });
-  }
+  //   // Play the button press animation
+  //   _animationController
+  //     ..reset()
+  //     ..forward().whenComplete(() {
+  //       // Reset the button color to the original color
+  //       setState(() {
+  //         _buttonColor = Colors.white;
+  //       });
+  //     });
+  // }
 
   @override
   Widget build(BuildContext context) {

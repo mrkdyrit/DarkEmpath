@@ -24,6 +24,7 @@ class _LargeTextState extends State<LargeText> {
       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
         fontFamily: widget.fontFamily,
         color: widget.textColor,
+        overflow: TextOverflow.ellipsis
       ),
     );
   }
