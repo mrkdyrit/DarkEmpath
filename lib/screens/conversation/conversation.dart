@@ -1,10 +1,18 @@
+import 'package:darkempath/screens/profiles/profiles_screen.dart';
 import 'package:darkempath/utils/custom_colors.dart';
 import 'package:darkempath/widgets/typography/title_large.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ConversationScreen extends StatefulWidget {
-  const ConversationScreen({super.key});
+  const ConversationScreen({
+    super.key,
+    required this.name,
+    required this.picPath,
+  });
+
+  final String name;
+  final String picPath;
 
   @override
   State<ConversationScreen> createState() => _ConversationScreenState();
@@ -35,12 +43,38 @@ class _ConversationScreenState extends State<ConversationScreen> {
             Navigator.pop(context);
           },
         ),
-        title: const Text(
-          'John Doe', 
-          style: TextStyle(
-            color: DarkEmpathColors.buttonColor
+        title: GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfileScreen(name: widget.name),));
+          },
+          child: Row(
+            children: [
+              SizedBox(
+                height: 30,
+                width: 30,
+                child: Container(
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFFD9D9D9),
+                  ),
+                  // child: ClipOval(
+                  //   child: Image.asset(chat['image']),
+                  // ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Text(
+                  widget.name.split(' ')[0], 
+                  style: const TextStyle(
+                    color: DarkEmpathColors.buttonColor
+                  ),
+                ),
+              )
+            ],
           ),
         ),
+        titleSpacing: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 32),

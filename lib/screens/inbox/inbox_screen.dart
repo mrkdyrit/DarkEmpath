@@ -96,7 +96,10 @@ class _InboxScreenState extends State<InboxScreen> {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const ConversationScreen(),)
+                    MaterialPageRoute(builder: (context) => ConversationScreen(
+                      name: chat['name'],
+                      picPath: chat['image'],
+                    ),)
                   );
                 },
                 child: Row(
@@ -123,10 +126,16 @@ class _InboxScreenState extends State<InboxScreen> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            LargeText(text: chat['name']),
+                            LargeText(
+                              text: chat['name'],
+                              fontWeight: FontWeight.w600,
+                            ),
                             SizedBox(
                               width: 200,
-                              child: LargeText(text: chat['last_message']),
+                              child: LargeText(
+                                text: chat['last_message'],
+                                textOverflow: TextOverflow.ellipsis,
+                              ),
                             ),
                           ],
                         ),

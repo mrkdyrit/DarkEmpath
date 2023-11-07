@@ -125,10 +125,10 @@ class ContainerRowList extends StatelessWidget {
               final message = inboxData.inbox[index];
               return GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context, 
-                    MaterialPageRoute(builder: (context) => const ConversationScreen(),)
-                  );
+                  // Navigator.push(
+                  //   context, 
+                  //   MaterialPageRoute(builder: (context) => const ConversationScreen(),)
+                  // );
                 },
                 child: ContainerRow(
                   text1: message['name'],

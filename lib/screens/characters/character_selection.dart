@@ -49,7 +49,7 @@ class _CharacterSelectionScreenState extends State<CharacterSelectionScreen> {
                         MaterialPageRoute(builder: (context) => const CharacterInformation(
                           characterName: 'Juan Dela Cruz',
                           characterDescription: 'Lorem ipsum dolor sit amet, sarantosi consectetur adipiscing elit Curabisati condimentum magna a leomalesuada, eu vehicula arcu dapibus.',
-                          characterAssetPath: 'assets/images/character_buttons/male.png',
+                          characterAssetPath: 'assets/images/character_info/male.png',
                         ))
                       );
                     },
@@ -63,7 +63,7 @@ class _CharacterSelectionScreenState extends State<CharacterSelectionScreen> {
                         MaterialPageRoute(builder: (context) => const CharacterInformation(
                           characterName: 'Ollie Montefalcon',
                           characterDescription: 'Lorem ipsum dolor sit amet, sarantosi consectetur adipiscing elit Curabisati condimentum magna a leomalesuada, eu vehicula arcu dapibus.',
-                          characterAssetPath: 'assets/images/character_buttons/female.png',
+                          characterAssetPath: 'assets/images/character_info/female.png',
                         ))
                       );
                     },
@@ -77,7 +77,7 @@ class _CharacterSelectionScreenState extends State<CharacterSelectionScreen> {
                         MaterialPageRoute(builder: (context) => const CharacterInformation(
                           characterName: 'Franchesca Dizon',
                           characterDescription: 'Lorem ipsum dolor sit amet, sarantosi consectetur adipiscing elit Curabisati condimentum magna a leomalesuada, eu vehicula arcu dapibus.',
-                          characterAssetPath: 'assets/images/character_buttons/lesbian.png',
+                          characterAssetPath: 'assets/images/character_info/lesbian.png',
                         ))
                       );
                     },
@@ -91,7 +91,7 @@ class _CharacterSelectionScreenState extends State<CharacterSelectionScreen> {
                         MaterialPageRoute(builder: (context) => const CharacterInformation(
                           characterName: 'Matthew De Castro',
                           characterDescription: 'Lorem ipsum dolor sit amet, sarantosi consectetur adipiscing elit Curabisati condimentum magna a leomalesuada, eu vehicula arcu dapibus.',
-                          characterAssetPath: 'assets/images/character_buttons/male.png',
+                          characterAssetPath: 'assets/images/character_info/male.png',
                         ))
                       );
                     },

@@ -1,4 +1,5 @@
 import 'package:darkempath/screens/inbox/inbox_screen.dart';
+import 'package:darkempath/screens/progress/progress_screen.dart';
 import 'package:darkempath/widgets/typography/large_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,10 +13,17 @@ class DrawerScreen extends StatefulWidget {
 
 class _DrawerScreenState extends State<DrawerScreen> {
   String screenTitle = 'Home';
+  Widget shownScreen = const InboxScreen();
 
   void updateScreenTitle(String screenTitle) {
     setState(() {
       this.screenTitle = screenTitle;
+    });
+  }
+
+  void changeScreen(Widget screen) {
+    setState(() {
+      shownScreen = screen;
     });
   }
 
@@ -56,6 +64,28 @@ class _DrawerScreenState extends State<DrawerScreen> {
         backgroundColor: const Color(0xFF1D1820),
         child: ListView(
           children: [
+            ListTile(
+              title: const LargeText(
+                text: 'Chats',
+              ),
+              leading: const Icon(Icons.chat_bubble, color: Colors.white,),
+              onTap: () {
+                Navigator.of(context).pop();
+                updateScreenTitle('Inbox');
+                changeScreen(const InboxScreen());
+              },
+            ),
+            ListTile(
+              title: const LargeText(
+                text: 'Progress',
+              ),
+              leading: const Icon(Icons.show_chart, color: Colors.white,),
+              onTap: () {
+                Navigator.of(context).pop();
+                updateScreenTitle('Progress');
+                changeScreen(const ProgressScreen());
+              },
+            ),
             const ListTile(
               title: LargeText(
                 text: 'Settings',
@@ -74,7 +104,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
           ],
         ),
       ),
-      body: const InboxScreen(),
+      body: shownScreen,
     );
   }
 }
