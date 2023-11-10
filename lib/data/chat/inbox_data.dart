@@ -1,127 +1,52 @@
 class InboxData {
   List<Map<String, dynamic>> inbox = [
     {
-      'name': 'REDFORD MORATALLA',
+      'name': 'Dashiell Rodriguez',
       'image': 'assets/icon_profile.png',
-      'last_message': 'Hello World TEXT1',
+      'last_message': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       'time': '5:59 PM',
     },
     {
-      'name': 'JOSHUA NACO',
+      'name': 'Lucian Rodriguez',
       'image': 'assets/img1.png',
-      'last_message': 'Hello World TEXT2',
+      'last_message': '',
       'time': '3:59 PM',
     },
     {
-      'name': 'KIM DAVID',
+      'name': 'Aldrin Santos',
       'image': 'assets/img2.png',
-      'last_message': 'kim david last message',
+      'last_message': '',
       'time': '9:59 PM',
     },
     {
-      'name': 'WYNMAR BUSCADO',
+      'name': 'Homer Reyes',
       'image': 'assets/img3.jpg',
-      'last_message': 'buscdo last reply hehe',
+      'last_message': '',
       'time': '8:59 PM',
     },
     {
-      'name': 'RENZ BATO',
+      'name': 'Lian Cortez',
       'image': 'assets/img4.png',
-      'last_message': 'hello kagawad',
+      'last_message': '',
       'time': '2:59 PM',
     },
     {
-      'name': 'REDFORD MORATALLA',
+      'name': 'Coline Vargaz',
       'image': 'assets/icon_profile.png',
-      'last_message': 'Hello World TEXT1',
+      'last_message': '',
       'time': '5:59 PM',
     },
     {
-      'name': 'JOSHUA NACO',
+      'name': 'Samantha Vidor',
       'image': 'assets/img1.png',
-      'last_message': 'Hello World TEXT2',
+      'last_message': '',
       'time': '3:59 PM',
     },
     {
-      'name': 'KIM DAVID',
+      'name': 'Earl Valencia',
       'image': 'assets/img2.png',
-      'last_message': 'kim david last message',
+      'last_message': '',
       'time': '9:59 PM',
     },
-    {
-      'name': 'WYNMAR BUSCADO',
-      'image': 'assets/img3.jpg',
-      'last_message': 'buscdo last reply hehe',
-      'time': '8:59 PM',
-    },
-    {
-      'name': 'RENZ BATO',
-      'image': 'assets/img4.png',
-      'last_message': 'hello kagawad',
-      'time': '2:59 PM',
-    },
-    {
-      'name': 'REDFORD MORATALLA',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'Hello World TEXT1',
-      'time': '5:59 PM',
-    },
-    {
-      'name': 'JOSHUA NACO',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'Hello World TEXT2',
-      'time': '3:59 PM',
-    },
-    {
-      'name': 'KIM DAVID',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'kim david last message',
-      'time': '9:59 PM',
-    },
-    {
-      'name': 'WYNMAR BUSCADO',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'buscdo last reply hehe',
-      'time': '8:59 PM',
-    },
-    {
-      'name': 'RENZ BATO',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'hello kagawad',
-      'time': '2:59 PM',
-    },
-    {
-      'name': 'REDFORD MORATALLA',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'Hello World TEXT1',
-      'time': '5:59 PM',
-    },
-    {
-      'name': 'JOSHUA NACO',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'Hello World TEXT2',
-      'time': '3:59 PM',
-    },
-    {
-      'name': 'KIM DAVID',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'kim david last message',
-      'time': '9:59 PM',
-    },
-    {
-      'name': 'WYNMAR BUSCADO',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'buscdo last reply hehe',
-      'time': '8:59 PM',
-    },
-    {
-      'name': 'RENZ BATO',
-      'image': 'assets/icon_profile.png',
-      'last_message': 'hello kagawad',
-      'time': '2:59 PM',
-    }
-    
-
-    
   ];
 }

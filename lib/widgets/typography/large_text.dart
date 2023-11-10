@@ -6,11 +6,15 @@ class LargeText extends StatefulWidget {
     required this.text,
     this.textColor = Colors.white,
     this.fontFamily = 'Heebo',
+    this.fontWeight = FontWeight.normal,
+    this.textOverflow = TextOverflow.visible
   });
 
   final String text;
   final Color textColor;
   final String fontFamily;
+  final FontWeight fontWeight;
+  final TextOverflow textOverflow;
 
   @override
   State<LargeText> createState() => _LargeTextState();
@@ -24,6 +28,8 @@ class _LargeTextState extends State<LargeText> {
       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
         fontFamily: widget.fontFamily,
         color: widget.textColor,
+        overflow: widget.textOverflow,
+        fontWeight: widget.fontWeight,
       ),
     );
   }

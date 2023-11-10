@@ -25,6 +25,8 @@ flutter:
   - assets/
   - assets/images/ 
   - assets/images/character_buttons/
+  - assets/images/character_info/
+  - assets/images/progress_tile/
 
   fonts:
     - family: Fredoka

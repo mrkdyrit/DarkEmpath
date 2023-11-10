@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
 
-class TitleLarge extends StatefulWidget {
-  const TitleLarge({
+class TitleSmall extends StatefulWidget {
+  const TitleSmall({
     super.key,
     required this.text,
     this.fontFamily = 'Fredoka',
     this.textColor = Colors.white,
-    this.fontWeight = FontWeight.w400,
   });
 
   final String text;
   final String fontFamily;
   final Color textColor;
-  final FontWeight fontWeight;
 
   @override
-  State<TitleLarge> createState() => _TitleLargeState();
+  State<TitleSmall> createState() => _TitleSmallState();
 }
 
-class _TitleLargeState extends State<TitleLarge> {
+class _TitleSmallState extends State<TitleSmall> {
   @override
   Widget build(BuildContext context) {
     return Text(
       widget.text,
-      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+      style: Theme.of(context).textTheme.titleSmall?.copyWith(
         fontFamily: widget.fontFamily,
-        fontWeight: widget.fontWeight,
+        fontWeight: FontWeight.w400,
         color: widget.textColor,
       ),
     );
