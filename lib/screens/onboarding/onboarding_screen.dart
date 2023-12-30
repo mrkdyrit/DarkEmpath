@@ -1,9 +1,8 @@
-import 'package:darkempath/screens/characters/character_selection.dart';
-import 'package:darkempath/screens/inbox/inbox.dart';
-import 'package:darkempath/utils/custom_colors.dart';
+import 'package:darkempath/screens/drawer/drawer_screen.dart';
+import 'package:darkempath/widgets/typography/heading_medium.dart';
+import 'package:darkempath/widgets/typography/large_text.dart';
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:smooth_corner/smooth_corner.dart';
 
 final List<OnboardingPage> onboardingPages = [
   OnboardingPage(
@@ -32,12 +31,19 @@ class OnboardingPage {
 }
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({
+    super.key,
+    required this.imageUrl,
+  });
+
+  final String imageUrl;
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentIndex = 0;
 
   @override
@@ -53,6 +59,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF221B27),
       body: Column(
         children: [
           Expanded(
@@ -60,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               controller: _pageController,
               itemCount: onboardingPages.length,
               itemBuilder: (context, index) {
-                return OnboardingPageWidget(onboardingPages[index]);
+                return OnboardingPageWidget(onboardingPages[index], widget.imageUrl);
               },
             ),
           ),
@@ -68,31 +75,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             padding: const EdgeInsets.only(bottom: 100.0),
             child: Column(
               children: [
-                if (_currentIndex == (onboardingPages.length - 1)) ...[
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const InboxScreen()), (route) => false);
-                    }, 
-                    child: const Text('Tap here to start game')
-                  )
-                ] else ...[
-                  DotsIndicator(
-                    dotsCount: onboardingPages.length,
-                    position: _currentIndex.toInt(),
-                    decorator: DotsDecorator(
-                      color: const Color(0xFFD9D9D9), // Background color
-                      activeColor: const Color(0xFF848484), // Active color
-                      size: const Size(50.0, 13.0), // Width and height
-                      activeSize: const Size(50.0, 13.0), // Width and height for active dot
-                      activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36.0)),
-                    ),
+                DotsIndicator(
+                  dotsCount: onboardingPages.length,
+                  position: _currentIndex.toInt(),
+                  decorator: DotsDecorator(
+                    color: const Color(0xFFC2C2C2), // Background color
+                    activeColor: const Color(0xFF9436DA), // Active color
+                    size: const Size(50.0, 13.0), // Width and height
+                    activeSize: const Size(50.0, 13.0), // Width and height for active dot
+                    activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36.0)),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36.0)),
                   ),
-                ],
+                ),
               ],
             ),
           ),
         ],
-      ),
+      )
     );
   }
 }
@@ -100,27 +99,45 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 class OnboardingPageWidget extends StatelessWidget {
   final OnboardingPage page;
 
-  const OnboardingPageWidget(this.page, {super.key});
+  final String imageUrl;
+
+  const OnboardingPageWidget(this.page, this.imageUrl, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
-          page.imageUrl,
-          width: 300,
+        SizedBox(
+          height: 235,
+          width: 235,
+          child: Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color(0xFF492A60)
+            ),
+            child: ClipOval(
+              child: Image.asset(imageUrl),
+            ),
+          ),
         ),
         const SizedBox(height: 20),
-        Text(
-          page.title,
-          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
+        HeadingMedium(titleText: page.title),
         const SizedBox(height: 10),
-        Text(
-          page.description,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 16),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+          child: LargeText(
+            text: page.description,
+            textColor: const Color(0xFF6F6F6F),
+          ),
+        ),
+        TextButton(
+          onPressed: () {
+            if (page.title == 'Enjoy The Game') {
+              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const DrawerScreen()), (route) => false);
+            }
+          }, 
+          child: LargeText(text: page.title == 'Enjoy The Game' ? 'Tap here to start game' : '', textColor: const Color(0xFF6F6F6F),)
         ),
       ],
     );
