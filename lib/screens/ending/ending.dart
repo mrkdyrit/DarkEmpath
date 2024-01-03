@@ -75,7 +75,7 @@ class _EndingScreenState extends State<EndingScreen> {
                           buttonAction: () {
 
                           },
-                          buttonText: 'Continue',
+                          buttonText: 'Quit',
                         ),
                       ),
                      
