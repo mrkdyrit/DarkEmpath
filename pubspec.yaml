@@ -15,6 +15,7 @@ dependencies:
 
   smooth_corner: ^1.1.0
   blur: ^3.0.0
+  reaction_askany: ^0.1.2
 
 dev_dependencies:
   flutter_test:
