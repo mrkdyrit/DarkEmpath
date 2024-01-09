@@ -72,8 +72,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InfluenceProgressIndicator(),
-                  MoraleProgressIndicator()
+                  InfluenceProgressIndicator(influenceValue: 0.9),
+                  MoraleProgressIndicator(moraleValue: 0.5)
                 ],
               ),
             ),
